@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pin_planner>
+	<pin_info>
+		<pin name="rst" source="Pin Planner" >
+		</pin>
+		<pin name="button" source="Pin Planner" >
+		</pin>
+		<pin name="rstout" source="Pin Planner" >
+		</pin>
+		<pin name="rstin" source="Pin Planner" >
+		</pin>
+		<pin name="led[1]" source="Pin Planner" >
+		</pin>
+		<pin name="led[0]" source="Pin Planner" >
+		</pin>
+		<pin name="enable" source="Pin Planner" >
+		</pin>
+		<pin name="LED1_out[6]" source="Pin Planner" >
+		</pin>
+		<pin name="LED1_out[5]" source="Pin Planner" >
+		</pin>
+		<pin name="LED1_out[4]" source="Pin Planner" >
+		</pin>
+		<pin name="LED1_out[3]" source="Pin Planner" >
+		</pin>
+		<pin name="LED1_out[2]" source="Pin Planner" >
+		</pin>
+		<pin name="LED1_out[1]" source="Pin Planner" >
+		</pin>
+		<pin name="LED1_out[0]" source="Pin Planner" >
+		</pin>
+		<pin name="LED2_out[6]" source="Pin Planner" >
+		</pin>
+		<pin name="LED2_out[5]" source="Pin Planner" >
+		</pin>
+		<pin name="LED2_out[4]" source="Pin Planner" >
+		</pin>
+		<pin name="LED2_out[3]" source="Pin Planner" >
+		</pin>
+		<pin name="LED2_out[2]" source="Pin Planner" >
+		</pin>
+		<pin name="LED2_out[1]" source="Pin Planner" >
+		</pin>
+		<pin name="LED2_out[0]" source="Pin Planner" >
+		</pin>
+		<pin name="SW" source="Pin Planner" >
+		</pin>
+		<pin name="direction[4]" source="Pin Planner" >
+		</pin>
+	</pin_info>
+	<buses>
+	</buses>
+	<group_file_association>
+	</group_file_association>
+	<pin_planner_file_specifies>
+	</pin_planner_file_specifies>
+</pin_planner>

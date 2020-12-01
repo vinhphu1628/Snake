@@ -1,0 +1,846 @@
+Analysis & Synthesis report for Snake
+Wed Jun 07 10:03:19 2017
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jun 07 10:03:19 2017      ;
+; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
+; Revision Name                      ; Snake                                      ;
+; Top-level Entity Name              ; Snake                                      ;
+; Family                             ; Cyclone IV GX                              ;
+; Total logic elements               ; 10,262                                     ;
+;     Total combinational functions  ; 10,240                                     ;
+;     Dedicated logic registers      ; 2,324                                      ;
+; Total registers                    ; 2324                                       ;
+; Total pins                         ; 50                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total GXB Receiver Channel PCS     ; 0                                          ;
+; Total GXB Receiver Channel PMA     ; 0                                          ;
+; Total GXB Transmitter Channel PCS  ; 0                                          ;
+; Total GXB Transmitter Channel PMA  ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CGX150DF31C7    ;                    ;
+; Top-level entity name                                                      ; Snake              ; Snake              ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                              ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                          ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------+---------+
+; snake.v                          ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/Xfoodz/Downloads/Snake Project/Snake/snake.v ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 50               ;
+;                          ;                  ;
+; DSP block 9-bit elements ; 0                ;
+;                          ;                  ;
+; Maximum fan-out node     ; start~input      ;
+; Maximum fan-out          ; 2235             ;
+; Total fan-out            ; 32834            ;
+; Average fan-out          ; 2.59             ;
++--------------------------+------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+--------------+
+; |Snake                     ; 10240 (10088)     ; 2324 (2247)  ; 0           ; 0            ; 0       ; 0         ; 0         ; 50   ; 0            ; |Snake                    ; work         ;
+;    |BCDcounter:C1|         ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Snake|BCDcounter:C1      ; work         ;
+;    |VGA_gen:gen1|          ; 45 (45)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Snake|VGA_gen:gen1       ; work         ;
+;    |clk_reduce:reduce1|    ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Snake|clk_reduce:reduce1 ; work         ;
+;    |led7seg:LED1|          ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Snake|led7seg:LED1       ; work         ;
+;    |led7seg:LED2|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Snake|led7seg:LED2       ; work         ;
+;    |randomGrid:rand1|      ; 45 (45)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Snake|randomGrid:rand1   ; work         ;
+;    |updateClk:UPDATE|      ; 38 (38)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Snake|updateClk:UPDATE   ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; control[1]                                         ; Mux5                ; yes                    ;
+; control[0]                                         ; Mux5                ; yes                    ;
+; temp[1]                                            ; Mux6                ; yes                    ;
+; temp[0]                                            ; Mux6                ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; snakeY[0][0]                            ; Stuck at GND due to stuck port data_in ;
+; snakeX[0][0]                            ; Stuck at GND due to stuck port data_in ;
+; randomGrid:rand1|rand_X[0]              ; Stuck at GND due to stuck port data_in ;
+; randomGrid:rand1|rand_Y[0]              ; Stuck at GND due to stuck port data_in ;
+; snakeY[6][0]                            ; Merged with snakeX[6][0]               ;
+; snakeY[5][0]                            ; Merged with snakeX[5][0]               ;
+; snakeY[4][0]                            ; Merged with snakeX[4][0]               ;
+; snakeY[3][0]                            ; Merged with snakeX[3][0]               ;
+; snakeY[2][0]                            ; Merged with snakeX[2][0]               ;
+; snakeY[1][0]                            ; Merged with snakeX[1][0]               ;
+; appleY[0]                               ; Merged with appleX[0]                  ;
+; snakeY[7][0]                            ; Merged with snakeX[7][0]               ;
+; snakeY[8][0]                            ; Merged with snakeX[8][0]               ;
+; snakeY[9][0]                            ; Merged with snakeX[9][0]               ;
+; snakeY[10][0]                           ; Merged with snakeX[10][0]              ;
+; snakeY[11][0]                           ; Merged with snakeX[11][0]              ;
+; snakeY[12][0]                           ; Merged with snakeX[12][0]              ;
+; snakeY[13][0]                           ; Merged with snakeX[13][0]              ;
+; snakeY[14][0]                           ; Merged with snakeX[14][0]              ;
+; snakeY[15][0]                           ; Merged with snakeX[15][0]              ;
+; snakeY[16][0]                           ; Merged with snakeX[16][0]              ;
+; snakeY[17][0]                           ; Merged with snakeX[17][0]              ;
+; snakeY[18][0]                           ; Merged with snakeX[18][0]              ;
+; snakeY[19][0]                           ; Merged with snakeX[19][0]              ;
+; snakeY[20][0]                           ; Merged with snakeX[20][0]              ;
+; snakeY[21][0]                           ; Merged with snakeX[21][0]              ;
+; snakeY[22][0]                           ; Merged with snakeX[22][0]              ;
+; snakeY[23][0]                           ; Merged with snakeX[23][0]              ;
+; snakeY[24][0]                           ; Merged with snakeX[24][0]              ;
+; snakeY[25][0]                           ; Merged with snakeX[25][0]              ;
+; snakeY[26][0]                           ; Merged with snakeX[26][0]              ;
+; snakeY[27][0]                           ; Merged with snakeX[27][0]              ;
+; snakeY[28][0]                           ; Merged with snakeX[28][0]              ;
+; snakeY[29][0]                           ; Merged with snakeX[29][0]              ;
+; snakeY[30][0]                           ; Merged with snakeX[30][0]              ;
+; snakeY[31][0]                           ; Merged with snakeX[31][0]              ;
+; snakeY[32][0]                           ; Merged with snakeX[32][0]              ;
+; snakeY[33][0]                           ; Merged with snakeX[33][0]              ;
+; snakeY[34][0]                           ; Merged with snakeX[34][0]              ;
+; snakeY[35][0]                           ; Merged with snakeX[35][0]              ;
+; snakeY[36][0]                           ; Merged with snakeX[36][0]              ;
+; snakeY[37][0]                           ; Merged with snakeX[37][0]              ;
+; snakeY[38][0]                           ; Merged with snakeX[38][0]              ;
+; snakeY[39][0]                           ; Merged with snakeX[39][0]              ;
+; snakeY[40][0]                           ; Merged with snakeX[40][0]              ;
+; snakeY[41][0]                           ; Merged with snakeX[41][0]              ;
+; snakeY[42][0]                           ; Merged with snakeX[42][0]              ;
+; snakeY[43][0]                           ; Merged with snakeX[43][0]              ;
+; snakeY[44][0]                           ; Merged with snakeX[44][0]              ;
+; snakeY[45][0]                           ; Merged with snakeX[45][0]              ;
+; snakeY[46][0]                           ; Merged with snakeX[46][0]              ;
+; snakeY[47][0]                           ; Merged with snakeX[47][0]              ;
+; snakeY[48][0]                           ; Merged with snakeX[48][0]              ;
+; snakeY[49][0]                           ; Merged with snakeX[49][0]              ;
+; snakeY[50][0]                           ; Merged with snakeX[50][0]              ;
+; snakeY[51][0]                           ; Merged with snakeX[51][0]              ;
+; snakeY[52][0]                           ; Merged with snakeX[52][0]              ;
+; snakeY[53][0]                           ; Merged with snakeX[53][0]              ;
+; snakeY[54][0]                           ; Merged with snakeX[54][0]              ;
+; snakeY[55][0]                           ; Merged with snakeX[55][0]              ;
+; snakeY[56][0]                           ; Merged with snakeX[56][0]              ;
+; snakeY[57][0]                           ; Merged with snakeX[57][0]              ;
+; snakeY[58][0]                           ; Merged with snakeX[58][0]              ;
+; snakeY[59][0]                           ; Merged with snakeX[59][0]              ;
+; snakeY[60][0]                           ; Merged with snakeX[60][0]              ;
+; snakeY[61][0]                           ; Merged with snakeX[61][0]              ;
+; snakeY[62][0]                           ; Merged with snakeX[62][0]              ;
+; snakeY[63][0]                           ; Merged with snakeX[63][0]              ;
+; snakeY[64][0]                           ; Merged with snakeX[64][0]              ;
+; snakeY[65][0]                           ; Merged with snakeX[65][0]              ;
+; snakeY[66][0]                           ; Merged with snakeX[66][0]              ;
+; snakeY[67][0]                           ; Merged with snakeX[67][0]              ;
+; snakeY[68][0]                           ; Merged with snakeX[68][0]              ;
+; snakeY[69][0]                           ; Merged with snakeX[69][0]              ;
+; snakeY[70][0]                           ; Merged with snakeX[70][0]              ;
+; snakeY[71][0]                           ; Merged with snakeX[71][0]              ;
+; snakeY[72][0]                           ; Merged with snakeX[72][0]              ;
+; snakeY[73][0]                           ; Merged with snakeX[73][0]              ;
+; snakeY[74][0]                           ; Merged with snakeX[74][0]              ;
+; snakeY[75][0]                           ; Merged with snakeX[75][0]              ;
+; snakeY[76][0]                           ; Merged with snakeX[76][0]              ;
+; snakeY[77][0]                           ; Merged with snakeX[77][0]              ;
+; snakeY[78][0]                           ; Merged with snakeX[78][0]              ;
+; snakeY[79][0]                           ; Merged with snakeX[79][0]              ;
+; snakeY[80][0]                           ; Merged with snakeX[80][0]              ;
+; snakeY[81][0]                           ; Merged with snakeX[81][0]              ;
+; snakeY[82][0]                           ; Merged with snakeX[82][0]              ;
+; snakeY[83][0]                           ; Merged with snakeX[83][0]              ;
+; snakeY[84][0]                           ; Merged with snakeX[84][0]              ;
+; snakeY[85][0]                           ; Merged with snakeX[85][0]              ;
+; snakeY[86][0]                           ; Merged with snakeX[86][0]              ;
+; snakeY[87][0]                           ; Merged with snakeX[87][0]              ;
+; snakeY[88][0]                           ; Merged with snakeX[88][0]              ;
+; snakeY[89][0]                           ; Merged with snakeX[89][0]              ;
+; snakeY[90][0]                           ; Merged with snakeX[90][0]              ;
+; snakeY[91][0]                           ; Merged with snakeX[91][0]              ;
+; snakeY[92][0]                           ; Merged with snakeX[92][0]              ;
+; snakeY[93][0]                           ; Merged with snakeX[93][0]              ;
+; snakeY[94][0]                           ; Merged with snakeX[94][0]              ;
+; snakeY[95][0]                           ; Merged with snakeX[95][0]              ;
+; snakeY[96][0]                           ; Merged with snakeX[96][0]              ;
+; snakeY[97][0]                           ; Merged with snakeX[97][0]              ;
+; snakeY[98][0]                           ; Merged with snakeX[98][0]              ;
+; snakeY[99][0]                           ; Merged with snakeX[99][0]              ;
+; snakeY[100][0]                          ; Merged with snakeX[100][0]             ;
+; snakeY[101][0]                          ; Merged with snakeX[101][0]             ;
+; snakeY[102][0]                          ; Merged with snakeX[102][0]             ;
+; snakeY[103][0]                          ; Merged with snakeX[103][0]             ;
+; snakeY[104][0]                          ; Merged with snakeX[104][0]             ;
+; snakeY[105][0]                          ; Merged with snakeX[105][0]             ;
+; snakeY[106][0]                          ; Merged with snakeX[106][0]             ;
+; snakeY[107][0]                          ; Merged with snakeX[107][0]             ;
+; snakeY[108][0]                          ; Merged with snakeX[108][0]             ;
+; snakeY[109][0]                          ; Merged with snakeX[109][0]             ;
+; snakeY[110][0]                          ; Merged with snakeX[110][0]             ;
+; snakeY[111][0]                          ; Merged with snakeX[111][0]             ;
+; snakeY[112][0]                          ; Merged with snakeX[112][0]             ;
+; snakeY[113][0]                          ; Merged with snakeX[113][0]             ;
+; snakeY[114][0]                          ; Merged with snakeX[114][0]             ;
+; snakeY[115][0]                          ; Merged with snakeX[115][0]             ;
+; snakeY[116][0]                          ; Merged with snakeX[116][0]             ;
+; snakeY[117][0]                          ; Merged with snakeX[117][0]             ;
+; snakeY[118][0]                          ; Merged with snakeX[118][0]             ;
+; snakeY[119][0]                          ; Merged with snakeX[119][0]             ;
+; snakeY[120][0]                          ; Merged with snakeX[120][0]             ;
+; snakeY[121][0]                          ; Merged with snakeX[121][0]             ;
+; snakeY[122][0]                          ; Merged with snakeX[122][0]             ;
+; snakeY[123][0]                          ; Merged with snakeX[123][0]             ;
+; snakeY[124][0]                          ; Merged with snakeX[124][0]             ;
+; snakeY[125][0]                          ; Merged with snakeX[125][0]             ;
+; snakeY[126][0]                          ; Merged with snakeX[126][0]             ;
+; snakeY[127][0]                          ; Merged with snakeX[127][0]             ;
+; appleX[0]                               ; Stuck at GND due to stuck port data_in ;
+; snakeX[1][0]                            ; Stuck at GND due to stuck port data_in ;
+; snakeX[2][0]                            ; Stuck at GND due to stuck port data_in ;
+; snakeX[3][0]                            ; Stuck at GND due to stuck port data_in ;
+; snakeX[4][0]                            ; Stuck at GND due to stuck port data_in ;
+; snakeX[5][0]                            ; Stuck at GND due to stuck port data_in ;
+; snakeX[6][0]                            ; Stuck at GND due to stuck port data_in ;
+; snakeX[7][0]                            ; Stuck at GND due to stuck port data_in ;
+; snakeX[8][0]                            ; Stuck at GND due to stuck port data_in ;
+; snakeX[9][0]                            ; Stuck at GND due to stuck port data_in ;
+; snakeX[10][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[11][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[12][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[13][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[14][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[15][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[16][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[17][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[18][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[19][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[20][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[21][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[22][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[23][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[24][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[25][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[26][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[27][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[28][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[29][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[30][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[31][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[32][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[33][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[34][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[35][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[36][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[37][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[38][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[39][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[40][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[41][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[42][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[43][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[44][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[45][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[46][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[47][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[48][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[49][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[50][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[51][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[52][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[53][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[54][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[55][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[56][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[57][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[58][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[59][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[60][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[61][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[62][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[63][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[64][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[65][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[66][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[67][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[68][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[69][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[70][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[71][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[72][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[73][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[74][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[75][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[76][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[77][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[78][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[79][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[80][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[81][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[82][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[83][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[84][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[85][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[86][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[87][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[88][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[89][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[90][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[91][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[92][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[93][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[94][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[95][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[96][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[97][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[98][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[99][0]                           ; Stuck at GND due to stuck port data_in ;
+; snakeX[100][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[101][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[102][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[103][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[104][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[105][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[106][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[107][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[108][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[109][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[110][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[111][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[112][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[113][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[114][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[115][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[116][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[117][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[118][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[119][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[120][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[121][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[122][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[123][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[124][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[125][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[126][0]                          ; Stuck at GND due to stuck port data_in ;
+; snakeX[127][0]                          ; Stuck at GND due to stuck port data_in ;
+; randomGrid:rand1|pointY[0]              ; Merged with appleCount[0]              ;
+; randomGrid:rand1|pointX[0]              ; Merged with appleCount[0]              ;
+; randomGrid:rand1|pointY[1]              ; Merged with appleCount[1]              ;
+; randomGrid:rand1|pointY[2]              ; Merged with appleCount[2]              ;
+; randomGrid:rand1|pointY[3]              ; Merged with appleCount[3]              ;
+; randomGrid:rand1|pointY[4]              ; Merged with appleCount[4]              ;
+; randomGrid:rand1|pointY[5]              ; Merged with appleCount[5]              ;
+; snakeX[127][9]                          ; Lost fanout                            ;
+; snakeX[127][8]                          ; Lost fanout                            ;
+; snakeX[127][7]                          ; Lost fanout                            ;
+; snakeX[127][6]                          ; Lost fanout                            ;
+; snakeX[127][5]                          ; Lost fanout                            ;
+; snakeX[127][4]                          ; Lost fanout                            ;
+; snakeX[127][3]                          ; Lost fanout                            ;
+; snakeX[127][2]                          ; Lost fanout                            ;
+; snakeX[127][1]                          ; Lost fanout                            ;
+; snakeY[127][8]                          ; Lost fanout                            ;
+; snakeY[127][7]                          ; Lost fanout                            ;
+; snakeY[127][6]                          ; Lost fanout                            ;
+; snakeY[127][5]                          ; Lost fanout                            ;
+; snakeY[127][4]                          ; Lost fanout                            ;
+; snakeY[127][3]                          ; Lost fanout                            ;
+; snakeY[127][2]                          ; Lost fanout                            ;
+; snakeY[127][1]                          ; Lost fanout                            ;
+; updateClk:UPDATE|count[0]               ; Merged with clk_reduce:reduce1|q       ;
+; appleCount[0]                           ; Merged with VGA_gen:gen1|xCount[0]     ;
+; Total Number of Removed Registers = 286 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                        ;
++----------------------------+---------------------------+-------------------------------------------------------------------------------------------+
+; Register name              ; Reason for Removal        ; Registers Removed due to This Register                                                    ;
++----------------------------+---------------------------+-------------------------------------------------------------------------------------------+
+; snakeX[0][0]               ; Stuck at GND              ; snakeX[1][0], snakeX[2][0], snakeX[3][0], snakeX[4][0], snakeX[5][0], snakeX[6][0],       ;
+;                            ; due to stuck port data_in ; snakeX[7][0], snakeX[8][0], snakeX[9][0], snakeX[10][0], snakeX[11][0], snakeX[12][0],    ;
+;                            ;                           ; snakeX[13][0], snakeX[14][0], snakeX[15][0], snakeX[16][0], snakeX[17][0], snakeX[18][0], ;
+;                            ;                           ; snakeX[19][0], snakeX[20][0], snakeX[21][0], snakeX[22][0], snakeX[23][0], snakeX[24][0], ;
+;                            ;                           ; snakeX[25][0], snakeX[26][0], snakeX[27][0], snakeX[28][0], snakeX[29][0], snakeX[30][0], ;
+;                            ;                           ; snakeX[31][0], snakeX[32][0], snakeX[33][0], snakeX[34][0], snakeX[35][0], snakeX[36][0], ;
+;                            ;                           ; snakeX[37][0], snakeX[38][0], snakeX[39][0], snakeX[40][0], snakeX[41][0], snakeX[42][0], ;
+;                            ;                           ; snakeX[43][0], snakeX[44][0], snakeX[45][0], snakeX[46][0], snakeX[47][0], snakeX[48][0], ;
+;                            ;                           ; snakeX[49][0], snakeX[50][0], snakeX[51][0], snakeX[52][0], snakeX[53][0], snakeX[54][0], ;
+;                            ;                           ; snakeX[55][0], snakeX[56][0], snakeX[57][0], snakeX[58][0], snakeX[59][0], snakeX[60][0], ;
+;                            ;                           ; snakeX[61][0], snakeX[62][0], snakeX[63][0], snakeX[64][0], snakeX[65][0], snakeX[66][0], ;
+;                            ;                           ; snakeX[67][0], snakeX[68][0], snakeX[69][0], snakeX[70][0], snakeX[71][0], snakeX[72][0], ;
+;                            ;                           ; snakeX[73][0], snakeX[74][0], snakeX[75][0], snakeX[76][0], snakeX[77][0], snakeX[78][0], ;
+;                            ;                           ; snakeX[79][0], snakeX[80][0], snakeX[81][0], snakeX[82][0], snakeX[83][0], snakeX[84][0], ;
+;                            ;                           ; snakeX[85][0], snakeX[86][0], snakeX[87][0], snakeX[88][0], snakeX[89][0], snakeX[90][0], ;
+;                            ;                           ; snakeX[91][0], snakeX[92][0], snakeX[93][0], snakeX[94][0], snakeX[95][0], snakeX[96][0], ;
+;                            ;                           ; snakeX[97][0], snakeX[98][0], snakeX[99][0], snakeX[100][0], snakeX[101][0],              ;
+;                            ;                           ; snakeX[102][0], snakeX[103][0], snakeX[104][0], snakeX[105][0], snakeX[106][0],           ;
+;                            ;                           ; snakeX[107][0], snakeX[108][0], snakeX[109][0], snakeX[110][0], snakeX[111][0],           ;
+;                            ;                           ; snakeX[112][0], snakeX[113][0], snakeX[114][0], snakeX[115][0], snakeX[116][0],           ;
+;                            ;                           ; snakeX[117][0], snakeX[118][0], snakeX[119][0], snakeX[120][0], snakeX[121][0],           ;
+;                            ;                           ; snakeX[122][0], snakeX[123][0], snakeX[124][0], snakeX[125][0], snakeX[126][0],           ;
+;                            ;                           ; snakeX[127][0]                                                                            ;
+; randomGrid:rand1|rand_X[0] ; Stuck at GND              ; appleX[0]                                                                                 ;
+;                            ; due to stuck port data_in ;                                                                                           ;
++----------------------------+---------------------------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2324  ;
+; Number of registers using Synchronous Clear  ; 11    ;
+; Number of registers using Synchronous Load   ; 13    ;
+; Number of registers using Asynchronous Clear ; 8     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2196  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; appleCount[1]                          ; 6       ;
+; appleCount[3]                          ; 5       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[64][5]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[32][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[16][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[8][4]               ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[4][5]               ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[2][3]               ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[1][7]               ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Snake|size[6]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Snake|randomGrid:rand1|rand_Y[2] ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Snake|randomGrid:rand1|rand_X[7] ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[126][5]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[125][8]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[124][5]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[123][6]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[122][4]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[121][6]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[120][3]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[119][9]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[118][8]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[117][6]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[116][2]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[115][4]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[114][5]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[113][6]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[112][5]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[111][6]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[110][5]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[109][6]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[108][1]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[107][2]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[106][2]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[105][9]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[104][8]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[103][9]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[102][1]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[101][2]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[100][2]             ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[99][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[98][6]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[97][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[96][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[95][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[94][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[93][3]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[92][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[91][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[90][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[89][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[88][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[87][7]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[86][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[85][7]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[84][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[83][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[82][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[81][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[80][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[79][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[78][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[77][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[76][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[75][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[74][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[73][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[72][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[71][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[70][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[69][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[68][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[67][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[66][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[65][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[63][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[62][7]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[61][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[60][4]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[59][7]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[58][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[57][6]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[56][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[55][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[54][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[53][7]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[52][7]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[51][4]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[50][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[49][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[48][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[47][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[46][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[45][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[44][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[43][3]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[42][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[41][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[40][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[39][3]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[38][7]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[37][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[36][3]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[35][7]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[34][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[33][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[31][4]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[30][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[29][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[28][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[27][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[26][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[25][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[24][7]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[23][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[22][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[21][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[20][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[19][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[18][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[17][2]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[15][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[14][6]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[13][6]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[12][9]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[11][8]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[10][1]              ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[9][3]               ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[7][3]               ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[6][8]               ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeY[5][3]               ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Snake|snakeX[3][2]               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |Snake|appleX[1]                  ;
+; 17:1               ; 9 bits    ; 99 LEs        ; 18 LEs               ; 81 LEs                 ; Yes        ; |Snake|snakeX[0][6]               ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 16 LEs               ; 72 LEs                 ; Yes        ; |Snake|snakeY[0][4]               ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |Snake|appleY[4]                  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; No         ; |Snake|Mux4                       ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 6 LEs                ; 14 LEs                 ; No         ; |Snake|Mux3                       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Snake|led7seg:LED1|led7seg[6]    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Snake|led7seg:LED2|led7seg[6]    ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Snake|Mux5                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 50                          ;
+; cycloneiii_ff         ; 2324                        ;
+;     CLR               ; 5                           ;
+;     ENA               ; 2169                        ;
+;     ENA CLR           ; 3                           ;
+;     ENA SCLR          ; 11                          ;
+;     ENA SLD           ; 13                          ;
+;     plain             ; 123                         ;
+; cycloneiii_lcell_comb ; 10246                       ;
+;     arith             ; 6259                        ;
+;         2 data inputs ; 2028                        ;
+;         3 data inputs ; 4231                        ;
+;     normal            ; 3987                        ;
+;         0 data inputs ; 259                         ;
+;         1 data inputs ; 20                          ;
+;         2 data inputs ; 2730                        ;
+;         3 data inputs ; 275                         ;
+;         4 data inputs ; 703                         ;
+;                       ;                             ;
+; Max LUT depth         ; 55.70                       ;
+; Average LUT depth     ; 26.74                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:16     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+    Info: Processing started: Wed Jun 07 10:02:51 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Snake -c Snake
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (12125): Using design file snake.v, which is not specified as a design file for the current project, but contains definitions for 8 design units and 8 entities in project
+    Info (12023): Found entity 1: Snake
+    Info (12023): Found entity 2: clk_reduce
+    Info (12023): Found entity 3: VGA_gen
+    Info (12023): Found entity 4: appleLocation
+    Info (12023): Found entity 5: randomGrid
+    Info (12023): Found entity 6: updateClk
+    Info (12023): Found entity 7: led7seg
+    Info (12023): Found entity 8: BCDcounter
+Info (12127): Elaborating entity "Snake" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at snake.v(35): object "maxSize" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at snake.v(127): truncated value with size 4 to match size of target (2)
+Warning (10240): Verilog HDL Always Construct warning at snake.v(100): inferring latch(es) for variable "temp", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at snake.v(100): inferring latch(es) for variable "control", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at snake.v(144): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at snake.v(145): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at snake.v(146): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at snake.v(147): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at snake.v(185): truncated value with size 32 to match size of target (7)
+Info (10041): Inferred latch for "control[0]" at snake.v(100)
+Info (10041): Inferred latch for "control[1]" at snake.v(100)
+Info (10041): Inferred latch for "control[2]" at snake.v(100)
+Info (10041): Inferred latch for "control[3]" at snake.v(100)
+Info (10041): Inferred latch for "temp[0]" at snake.v(100)
+Info (10041): Inferred latch for "temp[1]" at snake.v(100)
+Info (12128): Elaborating entity "clk_reduce" for hierarchy "clk_reduce:reduce1"
+Info (12128): Elaborating entity "VGA_gen" for hierarchy "VGA_gen:gen1"
+Warning (10230): Verilog HDL assignment warning at snake.v(251): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at snake.v(262): truncated value with size 32 to match size of target (10)
+Info (12128): Elaborating entity "randomGrid" for hierarchy "randomGrid:rand1"
+Warning (10230): Verilog HDL assignment warning at snake.v(316): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at snake.v(318): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at snake.v(326): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at snake.v(336): truncated value with size 32 to match size of target (9)
+Info (12128): Elaborating entity "updateClk" for hierarchy "updateClk:UPDATE"
+Warning (10230): Verilog HDL assignment warning at snake.v(350): truncated value with size 32 to match size of target (22)
+Info (12128): Elaborating entity "led7seg" for hierarchy "led7seg:LED1"
+Info (12128): Elaborating entity "BCDcounter" for hierarchy "BCDcounter:C1"
+Warning (10230): Verilog HDL assignment warning at snake.v(393): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at snake.v(398): truncated value with size 32 to match size of target (4)
+Warning (13012): Latch control[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal temp[1]
+Warning (13012): Latch control[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal temp[0]
+Warning (13012): Latch temp[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal direction[3]
+Warning (13012): Latch temp[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal direction[2]
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 17 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Xfoodz/Downloads/Snake Project/Snake/Snake.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KB_clk"
+    Warning (15610): No output dependent on input pin "data"
+Info (21057): Implemented 10344 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 10294 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 806 megabytes
+    Info: Processing ended: Wed Jun 07 10:03:19 2017
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:41
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Xfoodz/Downloads/Snake Project/Snake/Snake.map.smsg.
+
+

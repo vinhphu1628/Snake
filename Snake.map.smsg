@@ -1,0 +1,7 @@
+Warning (10268): Verilog HDL information at snake.v(54): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at snake.v(93): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at snake.v(131): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at snake.v(184): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at snake.v(189): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at snake.v(191): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at snake.v(34): object "update" differs only in case from object "UPDATE" in the same scope
